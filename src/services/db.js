@@ -37,6 +37,69 @@ export const initDB = () => {
   });
 };
 
+export const addIngredient = (ingredient) => {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(DB_NAME);
+    
+    request.onsuccess = (event) => {
+      const db = event.target.result;
+      const transaction = db.transaction(STORE_NAME, 'readwrite');
+      const store = transaction.objectStore(STORE_NAME);
+      const addRequest = store.add(ingredient);
+
+      addRequest.onsuccess = () => {
+        resolve(addRequest.result);
+      };
+
+      addRequest.onerror = () => {
+        reject('Error adding ingredient');
+      };
+    };
+  });
+};
+
+export const updateIngredient = (ingredient) => {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(DB_NAME);
+    
+    request.onsuccess = (event) => {
+      const db = event.target.result;
+      const transaction = db.transaction(STORE_NAME, 'readwrite');
+      const store = transaction.objectStore(STORE_NAME);
+      const putRequest = store.put(ingredient);
+
+      putRequest.onsuccess = () => {
+        resolve(putRequest.result);
+      };
+
+      putRequest.onerror = () => {
+        reject('Error updating ingredient');
+      };
+    };
+  });
+};
+
+export const deleteIngredient = (id) => {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(DB_NAME);
+    
+    request.onsuccess = (event) => {
+      const db = event.target.result;
+      const transaction = db.transaction(STORE_NAME, 'readwrite');
+      const store = transaction.objectStore(STORE_NAME);
+      const deleteRequest = store.delete(id);
+
+      deleteRequest.onsuccess = () => {
+        resolve();
+      };
+
+      deleteRequest.onerror = () => {
+        reject('Error deleting ingredient');
+      };
+    };
+  });
+};
+
 export const getAllIngredients = () => {
   return new Promise((resolve, reject) => {
     const request = indexedDB.open(DB_NAME);
