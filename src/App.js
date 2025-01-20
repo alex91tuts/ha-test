@@ -10,7 +10,7 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li>
               <Link to="/dashboard">Dashboard</Link>
@@ -19,8 +19,9 @@ function App() {
         </nav>
 
         <Routes>
+          <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/" element={
+          <Route path="/home" element={
             <div className="App-header">
               <h1>Welcome to React</h1>
               <Link to="/dashboard" className="App-link">Go to Dashboard</Link>
