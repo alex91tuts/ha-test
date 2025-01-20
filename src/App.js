@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Dashboard from './components/Dashboard';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
         <nav>
           <ul>
@@ -28,7 +28,7 @@ function App() {
           } />
         </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
