@@ -2,7 +2,7 @@
   "name": "ha-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/local/react-app",
+  "homepage": "https://alex91tuts.github.io/ha-test",
   "dependencies": {
     "cra-template-pwa": "2.0.0",
     "gh-pages": "^6.3.0",
@@ -16,7 +16,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-css": "tailwindcss -i ./static/src/input.css -o ./static/css/main.css --watch"
+    "build-css": "tailwindcss -i ./static/src/input.css -o ./static/css/main.css --watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
