@@ -1,12 +1,12 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import './index.css';
 import Dashboard from './components/Dashboard';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <nav className="bg-gray-800 p-4">
           <ul className="flex space-x-4 justify-center">
@@ -30,7 +30,7 @@ function App() {
           } />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
