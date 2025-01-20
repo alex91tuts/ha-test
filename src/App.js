@@ -1,19 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
+import './index.css';
 import Dashboard from './components/Dashboard';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <nav>
-          <ul>
+        <nav className="bg-gray-800 p-4">
+          <ul className="flex space-x-4 justify-center">
             <li>
-              <Link to="/home">Home</Link>
+              <Link to="/home" className="text-white hover:text-gray-300">Home</Link>
             </li>
             <li>
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/dashboard" className="text-white hover:text-gray-300">Dashboard</Link>
             </li>
           </ul>
         </nav>
